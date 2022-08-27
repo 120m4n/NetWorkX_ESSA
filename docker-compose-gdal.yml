@@ -1,0 +1,6 @@
+version: '3'
+services:
+  gdal:
+    image: osgeo/gdal:alpine-small-latest
+    volumes:
+      - ./app:/app

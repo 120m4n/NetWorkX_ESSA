@@ -14,7 +14,7 @@ cur = con.cursor()
 
 cur.execute('ALTER SESSION SET CURRENT_SCHEMA = INVENTARIO')
 
-circuito = '20 504'
+circuito = '20 507'
 cur.execute(consultas['tramomt'], circuito = circuito)
 
 rows = -1

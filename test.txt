@@ -1,0 +1,17 @@
+docker-compose run client /bin/bash
+
+yum install -y python3
+pip3 install cx_Oracle
+
+
+
+ogrinfo tramobt_20_504.csv -dialect=sqlite 
+ogrinfo tramobt_20_504.csv -dialect sqlite -sql "select CODIGOELEMENTO, MakePoint(CAST(X1 AS float),CAST(Y1 AS float)) FROM tramobt_20_504"
+ogrinfo tramobt_20_504.csv -dialect sqlite -sql "select CODIGOELEMENTO, MakeLine(MakePoint(CAST(X AS float),CAST(Y AS float)) , MakePoint(CAST(X1 AS float),CAST(Y1 AS float))) FROM tramobt_20_504"
+ogrinfo tramobt_20_504.csv -dialect sqlite -sql "select CODIGOELEMENTO, MakeLine(1 1 , 2 2) FROM tramobt_20_504"
+
+ogrinfo my.csv -dialect sqlite -sql "SELECT *, MakePoint(CAST(long AS FLOAT), CAST(lat AS FLOAT)) as geometry FROM my" -q
+ogrinfo my.csv -dialect sqlite -sql "SELECT id, foo,bar, MakeLine(MakePoint(CAST(long AS FLOAT), CAST(lat AS FLOAT))) FROM my GROUP BY id" -q
+
+
+sqlplus ADMIN/ADMIN@192.168.0.22:1521/DESARROLLO

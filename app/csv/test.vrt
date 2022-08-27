@@ -1,0 +1,8 @@
+<OGRVRTDataSource>
+    <OGRVRTLayer name="tramobt_20_504">
+        <SrcDataSource>tramobt_20_504.csv</SrcDataSource>
+        <GeometryType>wkbPoint</GeometryType>
+        <LayerSRS>EPSG:3116</LayerSRS>
+        <GeometryField encoding="PointFromColumns" x="X" y="Y"/>
+    </OGRVRTLayer>
+</OGRVRTDataSource>

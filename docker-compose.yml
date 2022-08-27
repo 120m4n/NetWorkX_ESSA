@@ -1,0 +1,6 @@
+version: '3'
+services:
+  client:
+    image: osgeo/gdal:ubuntu-small-3.5.1
+    volumes:
+      - ./app:/app
